@@ -4,7 +4,7 @@ html {
 
 body {
     margin: 0;
-    background-color: #131313;
+    background-color: black;
     color: azure;
     text-align: center;
 }
@@ -17,7 +17,7 @@ h1 {
     display: flex;
     justify-content: center;
     padding: 15px 0;
-    background: #131313;
+    background: black;
 }
 
 .nav ul {
