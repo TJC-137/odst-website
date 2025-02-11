@@ -20,6 +20,7 @@ body {
 .header-banner img {
     max-width: 100%;
     height: auto;
+    cursor: pointer;
 }
 
 /* Contenedor de la imagen de portada */
@@ -34,6 +35,14 @@ body {
 .header-cover img {
     max-width: 100%;
     height: auto;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.header-cover img:hover {
+    filter: grayscale(35%); /* Desatura la imagen al pasar el mouse */
+    transform: scale(1.03); /* Aumenta el tamaño de la imagen al pasar el mouse */
+
 }
 
 /* 🎥 Efecto de lluvia */
@@ -55,7 +64,7 @@ body {
 .nav {
     display: flex;
     justify-content: center;
-    padding: 15px 0;
+    padding: 20px;
     background: black;
 }
 
@@ -85,8 +94,28 @@ body {
     background: azure;
 }
 
-/* Responsividad */
+/* 📱 Responsividad para pantallas menores a 768px */
 @media (max-width: 768px) {
-    
-    
+
+    .header-banner img {
+        width: 90%;  /* Reduce el tamaño de la imagen */
+        height: auto; /* Mantiene la proporción */
+    }
+
+    .nav {
+        overflow-x: auto; /* Permite desplazamiento horizontal si es necesario */
+        white-space: nowrap; /* Evita que los elementos se vayan a otra línea */
+        padding: 10px 5px;
+    }
+
+    .nav ul {
+        gap: 5px; /* Reduce el espacio entre elementos */
+        padding: 0;
+        justify-content: space-around; /* Distribuye mejor los elementos */
+    }
+
+    .nav a {
+        font-size: 10px; /* Reduce el tamaño del texto */
+        padding: 8px 10px; /* Hace los botones más compactos */
+    }
 }
