@@ -1,3 +1,4 @@
+/* General */
 html {
     font-family: sans-serif;
 }
@@ -9,10 +10,48 @@ body {
     text-align: center;
 }
 
-h1 {
-    margin: 20px 0;
+/* Contenedores de imágenes */
+.header-banner {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
+.header-banner img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Contenedor de la imagen de portada */
+.header-cover {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden; /* Evita que la lluvia se salga */
+}
+
+.header-cover img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 🎥 Efecto de lluvia */
+.rain-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que el video cubra todo */
+    mix-blend-mode: soft-light; /* Elimina el fondo negro y solo deja la lluvia */
+    opacity: 1; /* Ajusta la intensidad de la lluvia sin opacar la imagen */
+    pointer-events: none; /* Evita que interfiera con la navegación */
+    transform: scaleX(-1); /* Gira la imagen */
+}
+
+
+/* Navegación */
 .nav {
     display: flex;
     justify-content: center;
@@ -25,11 +64,10 @@ h1 {
     display: flex;
     gap: 20px;
     padding: 0;
+    margin: 0;
 }
 
-.nav li {
-    display: inline-block;
-}
+.nav li {display: inline-block;}
 
 .nav a {
     color: azure;
@@ -38,10 +76,17 @@ h1 {
     padding: 10px 15px;
     background: #131313;
     border-radius: 5px;
+    border: 1px solid azure;
     transition: background 0.3s ease-in-out;
 }
 
 .nav a:hover {
     color: black;
     background: azure;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    
+    
 }

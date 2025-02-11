@@ -3,23 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halo ODST</title>
-    <link icon="img/odst-icon.webp">
+    <title>HALO ODST</title>
+    <link rel="icon" type="image/svg+xml" href="img/unsc-logo.png" />
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>
-            <img src="img/halo-3-odst.webp" alt="Halo Logo">
-        </h1>
+        <!-- Banner -->
+        <div class="header-banner">
+            <img src="img/odst-banner.png" alt="Halo ODST Banner">
+        </div>
+
+        <!-- Navegación -->
         <nav class="nav">
             <ul>
-                <li><a href="" target="_blank">STORE</a></li>
-                <li><a href="" target="_blank">MERCH</a></li>
-                <li><a href="" target="_blank">COMMUNITY</a></li>
-                <li><a href="" target="_blank">SUPPORT</a></li>
+                <li><a href="#">CHARACTERS</a></li>
+                <li><a href="#">MAP</a></li>
+                <li><a href="#">MEDIA</a></li>
+                <li><a href="#">SUPPORT</a></li>
             </ul>
         </nav>
     </header>
+
+    <main>
+        <!-- Imagen de portada con lluvia -->
+        <div class="header-cover">
+            <img src="img/odst-cover.webp" alt="Halo ODST Cover">
+            
+            <!-- Video de lluvia -->
+            <video class="rain-overlay" autoplay loop muted>
+                <source src="img/rain.mp4" type="video/mp4">
+            </video>
+        </div>
+    </main>
+
 </body>
 </html>
