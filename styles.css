@@ -1,0 +1,47 @@
+html {
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #131313;
+    color: azure;
+    text-align: center;
+}
+
+h1 {
+    margin: 20px 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    background: #131313;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+
+.nav li {
+    display: inline-block;
+}
+
+.nav a {
+    color: azure;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    background: #131313;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.nav a:hover {
+    color: black;
+    background: azure;
+}
