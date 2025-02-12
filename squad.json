@@ -40,10 +40,7 @@
         "rank": "Corporal",
         "role": "Pilot, heavy weapons",
         "status": "Imprisoned (Treason)",
-        "image-banner": ,
-        "image-profile": ,
-        "image-1": ,
-        "image-2": 
+        
       },
       {
         "alias": "Romeo",
@@ -51,10 +48,7 @@
         "rank": "Corporal",
         "role": "Marksman, sniper",
         "status": "Active",
-        "image-banner": ,
-        "image-profile": ,
-        "image-1": ,
-        "image-2": 
+        
       },
       {
         "alias": "Dare",
@@ -62,10 +56,7 @@
         "rank": "ONI Agent",
         "role": "ONI intelligence officer, mission commander",
         "status": "Active",
-        "image-banner": ,
-        "image-profile": ,
-        "image-1": ,
-        "image-2": 
+        
       }
     ]
   }
