@@ -1,0 +1,79 @@
+/* General */
+body {
+    background-color: black;
+    color: azure;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* 🏴 Banner */
+.banner {
+    position: relative; /* 📌 Para que el overlay se posicione sobre la imagen */
+    width: 100vw;
+    max-height: 30vh; /* 🔹 Hacemos el banner más estrecho */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 🔹 Imagen del banner con opacidad */
+.banner img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    opacity: 0.9; /* 🔹 Ajusta la opacidad para hacer el texto más visible */
+}
+
+/* 🔹 Overlay para el texto sobre el banner */
+.banner-overlay {
+    position: absolute; /* 📌 Se coloca sobre la imagen */
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* 🔹 Agrega sombra al texto para que resalte */
+    padding: 1rem;
+}
+
+
+
+/* 👥 Contenedor del escuadrón */
+.squad-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: -5px;
+    padding: 20px;
+    max-width: 100%;
+    flex-wrap: nowrap; /* Siempre en fila */
+    max-height: 400px;
+}
+
+/* 🎭 Estilos de los personajes */
+.character {
+    flex: 1 1 auto;
+    
+    width: auto;
+    transition: transform 0.3s ease-in-out;
+    max-height: min(45vh, 450px); /* 🔹 Máxima altura */
+    min-width: clamp(25px, 12vw, 150px); /* 🔹 Tamaño mínimo */
+    max-height: 450px; /* Ajusta el tamaño */
+    filter: drop-shadow(0 5px 3px rgba(0,0,0,0.3));
+    transition: all 0.3s ease-in-out;
+    transform-origin:center;
+    object-fit: contain;
+    margin-left: -2vw;
+}
+
+/* 🎯 Efecto de hover */
+.character:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    filter: brightness(1.1);
+    z-index: 10;
+}
