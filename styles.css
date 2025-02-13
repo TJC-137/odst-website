@@ -13,12 +13,18 @@ body {
     display: flex;
     justify-content: center;
     width: 100%;
+    
 }
 
 .header-banner img {
     max-width: 100%;
     height: auto;
     cursor: pointer;
+    filter: contrast(1) saturate(1) brightness(0.9);
+}
+
+.header-banner img:hover {
+    filter: contrast(1) saturate(1) brightness(1);
 }
 
 /* 🌧️ Cover */
