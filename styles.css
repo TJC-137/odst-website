@@ -119,3 +119,23 @@ body {
         padding: 8px 10px; /* Hace los botones más compactos */
     }
 }
+
+/* 🎭 Custom Scrollbar */
+::-webkit-scrollbar {width: 8px;}
+::-webkit-scrollbar-track {background: #1a1a1a;border-radius: 10px; }
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    transition: background 0.3s ease-in-out;
+    background: linear-gradient(
+        180deg, 
+        rgb(56, 53, 53),
+        rgb(204, 200, 194)
+    );
+}
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+        180deg, 
+        rgb(56, 53, 53),
+        rgb(204, 200, 194)
+    );
+}

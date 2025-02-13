@@ -1,4 +1,4 @@
-/* 🎭 Evento de clic en el contenedor de personajes */
+/* 🎭 Character selection */
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".character").forEach(img => {
         img.addEventListener("click", () => {

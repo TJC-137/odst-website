@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="img/general/unsc-logo.webp" />
+    <link rel="icon" type="image/svg+xml" href="../img/general/unsc-logo.webp" />
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="selected-character.css">
     <title>`${character.alias}`</title>
@@ -12,7 +12,9 @@
 <body>
     <!-- Banner -->
     <div class="character-banner">
-        <img id="character-banner" alt="Banner del personaje">
+        <a href="characters.html">
+            <img id="character-banner" alt="Banner del personaje">
+        </a>
     </div>
 
     <div class="character-wrapper">
@@ -20,25 +22,25 @@
         <aside class="character-card">
             <img id="character-profile" alt="Perfil del personaje">
             <h1 id="character-alias"></h1>
-            <h2 id="character-name"></h2>
+            <h3 id="character-name"></h3>
             <p><strong>Rank:</strong> <span id="character-rank"></span></p>
             <p><strong>Role:</strong> <span id="character-role"></span></p>
             <p><strong>Status:</strong> <span id="character-status"></span></p>
         </aside>
 
-        <!-- Lore del personaje -->
+        <!-- Lore -->
         <section class="character-lore">
             <h2>History</h2>
             <p id="character-lore"></p>
         </section>
     </div>
 
-    <!-- Galería de imágenes -->
+    <!-- Galery -->
     <div class="character-gallery">
         <h2>Galery</h2>
         <div class="gallery-container">
-            <img id="character-image-1" alt="Imagen del personaje">
-            <img id="character-image-2" alt="Imagen del personaje">
+            <img id="character-image-1" alt="character-image">
+            <img id="character-image-2" alt="character-image">
         </div>
     </div>
 

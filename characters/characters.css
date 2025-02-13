@@ -23,56 +23,56 @@ body {
     align-items: center;
 }
 
-/* 🔹 Imagen del banner con opacidad y recorte desde abajo */
 .banner img {
     width: 100%;
     height: auto;
     object-fit: cover;
-    object-position: top; /* 🔹 Asegura que el recorte ocurra desde abajo */
+    object-position: top;
     opacity: 0.8;
     
-    /* 🟢 Degradado */
+    /* 🟢 Gradient */
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0));
     -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0));
 }
 
-/* Overlay para el texto sobre el banner */
+/* Banner Text Overlay */
 .banner-overlay {
-    position: absolute;
     top: 80%;
     left: 50%;
-    transform: translate(-50%, -50%);
     width: 100%;
-    text-align: center;
-    color: azure;
-    font-size: clamp(1.5rem, 3.5vw, 5rem); /* 🔹 Un poco más grande */
-    font-weight: bold;
-    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.8); /* 🔹 Más sombra para que resalte */
     padding: 1rem;
-    background: rgba(0, 0, 0, 0.3); /* 🔹 Fondo semitransparente */
-    backdrop-filter: blur(3px); /* 🔹 Ligero desenfoque para mejorar legibilidad */
-    border-radius: 8px; /* 🔹 Bordes suavizados */
-    display: inline-block; /* 🔹 Solo ocupa el tamaño del texto */
+    color: azure;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px; 
+    position: absolute;
     white-space: nowrap;
+    display: inline-block;
+    backdrop-filter: blur(3px); 
+    background: rgba(0, 0, 0, 0.3); 
+    transform: translate(-50%, -50%);
+    font-size: clamp(1.5rem, 3.5vw, 5rem);
+    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.8); 
 }
 
-/* 📱 Responsividad para pantallas menores a 768px */
+/* 📱 Responsiveness */
 @media screen and (max-width: 768px) {
     .banner-overlay h1 {
-        white-space: nowrap;
-        font-size: clamp(1.5rem, 4vw, 3.5rem); /* 🔹 Se mantiene grande en pantallas grandes */
         margin: 0;
-        white-space: normal; /* 🔹 Permite saltos de línea si hace falta */
+        white-space: nowrap;
+        white-space: normal;
         word-wrap: break-word;
         text-overflow: clip;
+        font-size: clamp(1.5rem, 4vw, 3.5rem); 
     }
  
 }
 
 
-/* 👥 Contenedor del escuadrón */
+/* 👥 Squad container */
 .squad-container {
 
+    /* Positions de squad on top of the banner */
     /*
     position: absolute;
     bottom: 3vh;
@@ -87,12 +87,12 @@ body {
     gap: -25px;
     padding: 30px;
     max-width: 100%;
-    flex-wrap: nowrap; /* Siempre en fila */
+    flex-wrap: nowrap; /* Always in a row */
     max-height: 400px;
     margin-right: 10px;
 }
 
-/* 🔹 Margenes para los personajes */
+/* Character position */
 .character:nth-child(1){
     margin-left: 5vw;
     margin-right: -5vw;
@@ -100,7 +100,7 @@ body {
 }
 
 
-/* 🎭 Estilos de los personajes */
+/* 🎭 Character style */
 .character {
     flex: 1 1 auto;
     width: auto;
@@ -121,12 +121,33 @@ body {
             drop-shadow(0 5px 3px rgba(0,0,0,0.3));
 }
 
-/* 🎯 Efecto de hover */
+/* 🎯 Hover Effect */
 .character:hover {
+    z-index: 10;
     cursor: pointer;
     transform: scale(1.2);
-    z-index: 10;
     filter: brightness(1.1) 
             contrast(1.2) 
             saturate(1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* 🎭 Custom Scrollbar */
+::-webkit-scrollbar {width: 8px;}
+::-webkit-scrollbar-track {background: #1a1a1a;border-radius: 10px; }
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    transition: background 0.3s ease-in-out;
+    background: linear-gradient(
+        180deg, 
+        rgb(145, 28, 28),
+        rgb(236, 201, 134)
+    );
+}
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+        180deg, 
+        rgb(56, 53, 53),
+        rgb(204, 200, 194)
+    );
 }
