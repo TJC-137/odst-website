@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
     const characterName = params.get("character");
 
@@ -8,22 +8,15 @@ document.addEventListener("DOMContentLoaded", async () => {
         return;
     }
 
-    try {
-        const response = await fetch("squad.json");
-        const data = await response.json();
-        const character = data.squad.find(c => c.alias.toLowerCase() === characterName.toLowerCase());
+    const character = squadData.squad.find(c => c.alias.toLowerCase() === characterName.toLowerCase());
 
-        if (!character) {
-            alert("Personaje no encontrado.");
-            window.location.href = "characters.html";
-            return;
-        }
-
-        renderCharacter(character);
-    } catch (error) {
-        console.error("Error al cargar los datos:", error);
-        alert("Hubo un problema al cargar la información.");
+    if (!character) {
+        alert("Personaje no encontrado.");
+        window.location.href = "characters.html";
+        return;
     }
+
+    renderCharacter(character);
 });
 
 function renderCharacter(character) {

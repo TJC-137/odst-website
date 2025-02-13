@@ -1,5 +1,5 @@
-{
-  "squad": [
+const squadData = {
+  squad: [
     {
       "alias": "Rookie",
       "name": "John Doherty",
@@ -7,9 +7,9 @@
       "role": "Protagonist, stealth reconnaissance",
       "status": "KIA (Halo: Bad Blood)",
       "image-banner": "../img/rookie/rookie-banner.webp",
-      "image-profile": "img/rookie/rookie-profile.webp",
-      "image-1": "img/rookie/rookie-iddle.webp",
-      "image-2": ""
+      "image-profile": "../img/rookie/rookie-profile.webp",
+      "image-1": "../img/rookie/rookie-iddle.webp",
+      "image-2": null
     },
     {
       "alias": "Buck",
@@ -17,10 +17,10 @@
       "rank": "Gunnery Sergeant",
       "role": "Squad leader, strategist",
       "status": "Active (Halo 5: Guardians)",
-      "image-banner": "",
-      "image-profile": "",
-      "image-1": "",
-      "image-2": ""
+      "image-banner": null,
+      "image-profile": null,
+      "image-1": null,
+      "image-2": null
     },
     {
       "alias": "Dutch",
@@ -28,10 +28,10 @@
       "rank": "Corporal",
       "role": "Explosives specialist",
       "status": "Retired",
-      "image-banner": "",
-      "image-profile": "",
-      "image-1": "",
-      "image-2": "null"
+      "image-banner": null,
+      "image-profile": null,
+      "image-1": null,
+      "image-2": null
     },
     {
       "alias": "Mickey",
@@ -39,10 +39,10 @@
       "rank": "Corporal",
       "role": "Pilot, heavy weapons",
       "status": "Imprisoned (Treason)",
-      "image-banner": "",
-      "image-profile": "",
-      "image-1": "",
-      "image-2": ""
+      "image-banner": null,
+      "image-profile": null,
+      "image-1": null,
+      "image-2": null
     },
     {
       "alias": "Romeo",
@@ -50,10 +50,10 @@
       "rank": "Corporal",
       "role": "Marksman, sniper",
       "status": "Active",
-      "image-banner": "",
-      "image-profile": "",
-      "image-1": "",
-      "image-2": ""
+      "image-banner": null,
+      "image-profile": null,
+      "image-1": null,
+      "image-2": null
     },
     {
       "alias": "Dare",
@@ -61,10 +61,10 @@
       "rank": "ONI Agent",
       "role": "ONI intelligence officer, mission commander",
       "status": "Active",
-      "image-banner": "",
-      "image-profile": "",
-      "image-1": "",
-      "image-2": ""
+      "image-banner": null,
+      "image-profile": null,
+      "image-1": null,
+      "image-2": null
     }
   ]
-}
+};
