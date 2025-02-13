@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     try {
-        const response = await fetch("/squad.json");
+        const response = await fetch("squad.json");
         const data = await response.json();
         const character = data.squad.find(c => c.alias.toLowerCase() === characterName.toLowerCase());
 
