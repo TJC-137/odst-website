@@ -1,9 +1,23 @@
 body {
     background-color: #1a1a1a;
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: 'Audiowide', sans-serif;
     margin: 0;
     padding: 0;
+}
+
+h1{
+    text-align: center;
+    padding: 20px;
+    color: rgb(236, 201, 134);
+}
+
+h2 {
+    color: rgb(116, 202, 236);
+}
+
+strong{
+    color: rgb(145, 28, 28);
 }
 
 .character-banner img {

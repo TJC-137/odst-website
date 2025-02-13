@@ -8,8 +8,8 @@ const squadData = {
       "status": "KIA (Halo: Bad Blood)",
       "image-banner": "../img/rookie/rookie-banner.webp",
       "image-profile": "../img/rookie/rookie-profile.webp",
-      "image-1": "../img/rookie/rookie-iddle.webp",
-      "image-2": null,
+      "image-1": "../img/rookie/rookie-weapon-aiming.webp",
+      "image-2": "../img/rookie/rookie-iddle.webp",
       "lore": "John Doherty, better known as the Rookie, was a member of Alpha-Nine, a squad of Orbital Drop Shock Troopers. He was known for his exceptional skills in stealth reconnaissance, which he demonstrated during the Battle of New Mombasa. The Rookie was killed in action during the events of Halo: Bad Blood."
     },
     {

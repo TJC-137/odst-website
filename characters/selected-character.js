@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
+    document.title = `${character.alias} - Halo ODST`;
+
     renderCharacter(character);
 });
 
