@@ -1,63 +1,70 @@
 {
-    "squad": [
-      {
-        "alias": "The Rookie",
-        "name": "John Doherty",
-        "rank": "Lance Corporal",
-        "role": "Protagonist, stealth reconnaissance",
-        "status": "KIA (Halo: Bad Blood)",
-        "image-banner": ,
-        "image-profile": ,
-        "image-1": ,
-        "image-2": 
-      },
-      {
-        "alias": "Buck",
-        "name": "Edward Malcolm Buck",
-        "rank": "Gunnery Sergeant",
-        "role": "Squad leader, strategist",
-        "status": "Active (Halo 5: Guardians)",
-        "image-banner": ,
-        "image-profile": ,
-        "image-1": ,
-        "image-2": 
-        
-      },
-      {
-        "alias": "Dutch",
-        "name": "Taylor Henry Miles",
-        "rank": "Corporal",
-        "role": "Explosives specialist",
-        "status": "Retired",
-        "image-banner": ,
-        "image-profile": ,
-        "image-1": ,
-        "image-2": 
-      },
-      {
-        "alias": "Mickey",
-        "name": "Michael Crespo",
-        "rank": "Corporal",
-        "role": "Pilot, heavy weapons",
-        "status": "Imprisoned (Treason)",
-        
-      },
-      {
-        "alias": "Romeo",
-        "name": "Kojo Agu",
-        "rank": "Corporal",
-        "role": "Marksman, sniper",
-        "status": "Active",
-        
-      },
-      {
-        "alias": "Dare",
-        "name": "Veronica Dare",
-        "rank": "ONI Agent",
-        "role": "ONI intelligence officer, mission commander",
-        "status": "Active",
-        
-      }
-    ]
-  }
-  
+  "squad": [
+    {
+      "alias": "The Rookie",
+      "name": "John Doherty",
+      "rank": "Lance Corporal",
+      "role": "Protagonist, stealth reconnaissance",
+      "status": "KIA (Halo: Bad Blood)",
+      "image-banner": "img/rookie/rookie-banner.webp",
+      "image-profile": "img/rookie/rookie-profile.webp",
+      "image-1": "img/rookie/rookie-iddle.webp",
+      "image-2": ""
+    },
+    {
+      "alias": "Buck",
+      "name": "Edward Malcolm Buck",
+      "rank": "Gunnery Sergeant",
+      "role": "Squad leader, strategist",
+      "status": "Active (Halo 5: Guardians)",
+      "image-banner": "",
+      "image-profile": "",
+      "image-1": "",
+      "image-2": ""
+    },
+    {
+      "alias": "Dutch",
+      "name": "Taylor Henry Miles",
+      "rank": "Corporal",
+      "role": "Explosives specialist",
+      "status": "Retired",
+      "image-banner": "",
+      "image-profile": "",
+      "image-1": "",
+      "image-2": "null"
+    },
+    {
+      "alias": "Mickey",
+      "name": "Michael Crespo",
+      "rank": "Corporal",
+      "role": "Pilot, heavy weapons",
+      "status": "Imprisoned (Treason)",
+      "image-banner": "",
+      "image-profile": "",
+      "image-1": "",
+      "image-2": ""
+    },
+    {
+      "alias": "Romeo",
+      "name": "Kojo Agu",
+      "rank": "Corporal",
+      "role": "Marksman, sniper",
+      "status": "Active",
+      "image-banner": "",
+      "image-profile": "",
+      "image-1": "",
+      "image-2": ""
+    },
+    {
+      "alias": "Dare",
+      "name": "Veronica Dare",
+      "rank": "ONI Agent",
+      "role": "ONI intelligence officer, mission commander",
+      "status": "Active",
+      "image-banner": "",
+      "image-profile": "",
+      "image-1": "",
+      "image-2": ""
+    }
+  ]
+}

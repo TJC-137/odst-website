@@ -1,9 +1,12 @@
 /* General */
+html {
+    font-family: 'Audiowide', sans-serif;
+}
+
 body {
     background-color: black;
     color: azure;
     text-align: center;
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -36,13 +39,13 @@ body {
 /* Overlay para el texto sobre el banner */
 .banner-overlay {
     position: absolute;
-    top: 75%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
     text-align: center;
     color: azure;
-    font-size: clamp(1.8rem, 5vw, 5rem); /* 🔹 Un poco más grande */
+    font-size: clamp(1.5rem, 3.5vw, 5rem); /* 🔹 Un poco más grande */
     font-weight: bold;
     text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.8); /* 🔹 Más sombra para que resalte */
     padding: 1rem;
@@ -56,7 +59,8 @@ body {
 /* 📱 Responsividad para pantallas menores a 768px */
 @media screen and (max-width: 768px) {
     .banner-overlay h1 {
-        font-size: clamp(2rem, 8vw, 3.5rem); /* 🔹 Se mantiene grande en pantallas grandes */
+        white-space: nowrap;
+        font-size: clamp(1.5rem, 4vw, 3.5rem); /* 🔹 Se mantiene grande en pantallas grandes */
         margin: 0;
         white-space: normal; /* 🔹 Permite saltos de línea si hace falta */
         word-wrap: break-word;
