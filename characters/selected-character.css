@@ -14,11 +14,13 @@ body {
 
 .character-wrapper {
     display: flex;
+    flex-direction: row-reverse;
     max-width: 1200px;
     margin: auto;
     padding: 20px;
     gap: 20px;
 }
+
 
 .character-card {
     width: 30%;

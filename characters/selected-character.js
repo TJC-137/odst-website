@@ -25,6 +25,7 @@ function renderCharacter(character) {
     document.getElementById("character-rank").textContent = character.rank;
     document.getElementById("character-role").textContent = character.role;
     document.getElementById("character-status").textContent = character.status;
+    document.getElementById("character-lore").textContent = character.lore;
 
     setImage("character-banner", character["image-banner"]);
     setImage("character-profile", character["image-profile"]);
