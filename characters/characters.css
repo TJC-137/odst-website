@@ -33,13 +33,16 @@ body {
     -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0));
 }
 
-/* 🔹 Overlay para el texto sobre el banner */
+/* Overlay para el texto sobre el banner */
 .banner-overlay {
     position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
     text-align: center;
     color: azure;
-    font-size: clamp(1.8rem, 5vw, 3rem); /* 🔹 Un poco más grande */
+    font-size: clamp(1.8rem, 5vw, 5rem); /* 🔹 Un poco más grande */
     font-weight: bold;
     text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.8); /* 🔹 Más sombra para que resalte */
     padding: 1rem;
@@ -47,6 +50,19 @@ body {
     backdrop-filter: blur(3px); /* 🔹 Ligero desenfoque para mejorar legibilidad */
     border-radius: 8px; /* 🔹 Bordes suavizados */
     display: inline-block; /* 🔹 Solo ocupa el tamaño del texto */
+    white-space: nowrap;
+}
+
+/* 📱 Responsividad para pantallas menores a 768px */
+@media screen and (max-width: 768px) {
+    .banner-overlay h1 {
+        font-size: clamp(2rem, 8vw, 3.5rem); /* 🔹 Se mantiene grande en pantallas grandes */
+        margin: 0;
+        white-space: normal; /* 🔹 Permite saltos de línea si hace falta */
+        word-wrap: break-word;
+        text-overflow: clip;
+    }
+ 
 }
 
 
