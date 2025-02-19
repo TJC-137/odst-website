@@ -1,69 +1,127 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const mapContainer = document.querySelector(".map-container");
-    const map = document.getElementById("map");
+const mapContainer = document.querySelector('.map-container');
+const mapImage = document.querySelector('#map');
 
-    let scale = 1;
-    let posX = 0, posY = 0;
-    let isDragging = false;
-    let startX, startY;
+let scale = 1, minScale = 1, maxScale = 4;
+let translateX = 0, translateY = 0;
+let isDragging = false, startX, startY;
 
-    // 🟢 Zoom con scroll - Suavizado y centrado en el cursor
-    mapContainer.addEventListener("wheel", (event) => {
-        event.preventDefault();
+// Eventos para el desplazamiento con el mouse
+mapImage.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.clientX - translateX;
+    startY = e.clientY - translateY;
+    mapImage.style.cursor = 'grabbing';
+});
 
-        const scaleAmount = event.deltaY * -0.002; // Control de zoom más fluido
-        const prevScale = scale;
+window.addEventListener('mouseup', () => {
+    isDragging = false;
+    mapImage.style.cursor = 'grab';
+});
 
-        scale = Math.min(Math.max(1, scale + scaleAmount), 3); // Zoom entre 1x y 3x
+mapImage.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    translateX = e.clientX - startX;
+    translateY = e.clientY - startY;
+    clampPosition();
+    updateTransform();
+});
 
-        // Ajustar para que el zoom sea centrado en el cursor
-        const rect = map.getBoundingClientRect();
-        const offsetX = (event.clientX - rect.left) / rect.width;
-        const offsetY = (event.clientY - rect.top) / rect.height;
-
-        posX -= (offsetX * rect.width - posX) * (scale - prevScale);
-        posY -= (offsetY * rect.height - posY) * (scale - prevScale);
-
-        updateTransform();
-    });
-
-    // 🟡 Iniciar drag con click
-    mapContainer.addEventListener("mousedown", (event) => {
+// Eventos para el desplazamiento táctil
+mapImage.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 1) { // Solo un dedo para desplazar
         isDragging = true;
-        startX = event.clientX - posX;
-        startY = event.clientY - posY;
-        map.style.cursor = "grabbing";
-    });
-
-    // 🟠 Mover mientras se arrastra
-    window.addEventListener("mousemove", (event) => {
-        if (!isDragging) return;
-        posX = event.clientX - startX;
-        posY = event.clientY - startY;
-        updateTransform();
-    });
-
-    // 🔴 Soltar drag al dejar de hacer click
-    window.addEventListener("mouseup", () => {
-        isDragging = false;
-        map.style.cursor = "grab";
-    });
-
-    // 🚫 No permitir salir fuera del área visible
-    function enforceBounds() {
-        const rect = map.getBoundingClientRect();
-        const containerRect = mapContainer.getBoundingClientRect();
-
-        const minX = containerRect.width - rect.width * scale;
-        const minY = containerRect.height - rect.height * scale;
-        
-        posX = Math.min(0, Math.max(minX, posX));
-        posY = Math.min(0, Math.max(minY, posY));
-    }
-
-    // 🔹 Aplica los cambios al estilo de la imagen
-    function updateTransform() {
-        enforceBounds();
-        map.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
+        startX = e.touches[0].clientX - translateX;
+        startY = e.touches[0].clientY - translateY;
     }
 });
+
+window.addEventListener('touchend', () => {
+    isDragging = false;
+});
+
+mapImage.addEventListener('touchmove', (e) => {
+    if (!isDragging || e.touches.length !== 1) return;
+    e.preventDefault();
+    translateX = e.touches[0].clientX - startX;
+    translateY = e.touches[0].clientY - startY;
+    clampPosition();
+    updateTransform();
+});
+
+// Zoom con la rueda del mouse
+mapContainer.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    const scaleFactor = e.deltaY > 0 ? 0.9 : 1.1;
+    const newScale = Math.min(Math.max(scale * scaleFactor, minScale), maxScale);
+    zoomAtPoint(e.clientX, e.clientY, newScale);
+});
+
+// Zoom con gesto de pellizco (para móviles)
+let initialDistance = null;
+
+mapContainer.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 2) { // Dos dedos para hacer zoom
+        initialDistance = getDistance(e.touches[0], e.touches[1]);
+    }
+});
+
+mapContainer.addEventListener('touchmove', (e) => {
+    if (e.touches.length === 2 && initialDistance !== null) {
+        e.preventDefault();
+        const currentDistance = getDistance(e.touches[0], e.touches[1]);
+        const scaleFactor = currentDistance / initialDistance;
+        const newScale = Math.min(Math.max(scale * scaleFactor, minScale), maxScale);
+
+        // Calcular el punto medio entre los dos dedos
+        const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+        const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+
+        zoomAtPoint(midX, midY, newScale);
+        initialDistance = currentDistance;
+    }
+});
+
+mapContainer.addEventListener('touchend', () => {
+    initialDistance = null;
+});
+
+// Función para calcular la distancia entre dos puntos táctiles
+function getDistance(touch1, touch2) {
+    return Math.hypot(
+        touch2.clientX - touch1.clientX,
+        touch2.clientY - touch1.clientY
+    );
+}
+
+// Función para hacer zoom en un punto específico
+function zoomAtPoint(x, y, newScale) {
+    const rect = mapImage.getBoundingClientRect();
+    const offsetX = (x - rect.left) / scale;
+    const offsetY = (y - rect.top) / scale;
+
+    translateX -= (offsetX * newScale - offsetX * scale);
+    translateY -= (offsetY * newScale - offsetY * scale);
+
+    scale = newScale;
+    clampPosition();
+    updateTransform();
+}
+
+// Función para limitar el desplazamiento dentro de los bordes del mapa
+function clampPosition() {
+    const rect = mapContainer.getBoundingClientRect();
+    const imgWidth = mapImage.naturalWidth * scale;
+    const imgHeight = mapImage.naturalHeight * scale;
+
+    const minX = Math.min(0, rect.width - imgWidth);
+    const minY = Math.min(0, rect.height - imgHeight);
+
+    translateX = Math.max(minX, Math.min(translateX, 0));
+    translateY = Math.max(minY, Math.min(translateY, 0));
+}
+
+// Función para actualizar la transformación del mapa
+function updateTransform() {
+    mapImage.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+}

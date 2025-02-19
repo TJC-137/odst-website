@@ -1,0 +1,184 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+.enlist-container {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: flicker 1.5s infinite alternate;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: rgb(175, 175, 175);
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+@keyframes flicker {
+    0% { opacity: 1; }
+    100% { opacity: 0.7; }
+}
+
+.logo-image {
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.main-image, .extra-image {
+    width: 50%;
+    max-width: 400px;
+    border: 3px solid #fff;
+    margin-bottom: 20px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.extra-section {
+    margin: 30px 0;
+}
+
+.extra-section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Carrusel */
+.carousel {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 10px 0;
+}
+
+.carousel img {
+    width: 120px;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.carousel img:hover {
+    transform: scale(1.05);
+}
+
+.carousel img.selected {
+    border-color: red;
+}
+
+/* Botones */
+button {
+    background: red;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-top: 20px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: darkred;
+    transform: scale(1.05);
+}
+
+
+
+#form-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+
+#nameInput {
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
+    text-align: center;
+}
+
+#submitButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: red;
+    border: none;
+    padding: 15px;
+    font-size: 14px;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+#submitButton img {
+    width: 40px;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+/* Contenedor de bienvenida */
+#welcome-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+#welcome-message {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#odst-army {
+    width: 250px;
+    margin-top: 10px;
+    border: 3px solid white;
+}
+
+/* Estilo para moviles */
+@media (max-width: 768px) {
+    .main-image, .extra-image {
+        width: 60%;
+    }
+
+    .carousel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .carousel img {
+        width: 50%;
+    }
+
+    #odst-army {
+        width: 150px;
+    }
+}
